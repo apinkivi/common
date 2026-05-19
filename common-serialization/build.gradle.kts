@@ -13,3 +13,7 @@ kotlin {
         api(libs.kotlin.serialization.json)
     }
 }
+
+tasks.named("check") {
+    dependsOn("detektMainJvm")
+}

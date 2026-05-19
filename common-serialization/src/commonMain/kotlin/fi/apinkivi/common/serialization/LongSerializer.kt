@@ -12,7 +12,7 @@ abstract class LongSerializer<T : Any>(
 ) : KSerializer<T> {
     final override val descriptor = PrimitiveSerialDescriptor(serialName, PrimitiveKind.LONG)
 
-    constructor(type: KClass<T>) : this(type.simpleName!!)
+    constructor(type: KClass<T>) : this("${type.simpleName}")
 
     final override fun deserialize(decoder: Decoder) = deserialize(decoder.decodeLong())
 

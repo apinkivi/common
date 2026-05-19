@@ -13,3 +13,7 @@ kotlin {
         }
     }
 }
+
+tasks.named("check") {
+    dependsOn("detektMainJvm")
+}

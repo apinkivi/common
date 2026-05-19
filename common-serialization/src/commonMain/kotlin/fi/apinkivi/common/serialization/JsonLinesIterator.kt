@@ -10,7 +10,12 @@ open class JsonLinesIterator<T>(
 ) : Iterator<T> {
     fun decode(value: String) = json.decodeFromString(deserializer, value)
 
-    override fun next() = decode(iterator.next())
+    override fun next() =
+        if (iterator.hasNext()) {
+            decode(iterator.next())
+        } else {
+            throw NoSuchElementException("No more elements in the JSON lines iterator")
+        }
 
     override fun hasNext() = iterator.hasNext()
 }

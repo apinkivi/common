@@ -12,7 +12,7 @@ import kotlin.reflect.KClass
 abstract class StringSerializer<T : Any>(
     serialName: String,
 ) : KSerializer<T> {
-    constructor(type: KClass<T>) : this(type.simpleName!!)
+    constructor(type: KClass<T>) : this("${type.simpleName}")
 
     final override val descriptor: SerialDescriptor = PrimitiveSerialDescriptor(serialName, PrimitiveKind.STRING)
 

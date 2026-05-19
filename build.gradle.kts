@@ -18,7 +18,7 @@ kotlin {
             api(libs.kotlin.serialization)
         }
         commonTest.dependencies {
-            implementation(kotlin("test"))
+            implementation(libs.kotlin.test)
         }
     }
 }
@@ -43,4 +43,8 @@ spotless {
         targetExtension("gradle.kts")
         ktlint()
     }
+}
+
+tasks.named("check") {
+    dependsOn("detektMainJvm", "detektTestJvm")
 }

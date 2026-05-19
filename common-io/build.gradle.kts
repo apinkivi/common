@@ -14,3 +14,7 @@ kotlin {
         api(project(":"))
     }
 }
+
+tasks.named("check") {
+    dependsOn("detektMainJvm")
+}
