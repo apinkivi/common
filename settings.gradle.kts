@@ -1,7 +1,7 @@
 @Suppress("UnstableApiUsage")
 dependencyResolutionManagement.repositories.mavenCentral()
 
-rootProject.name = "common-core"
+rootProject.name = "common"
 
 include(":common-datetime")
 include(":common-io")

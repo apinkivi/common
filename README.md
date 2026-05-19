@@ -7,13 +7,13 @@ These Kotlin/Common domain independent utilities use minimal dependencies.
 ```mermaid
 flowchart TD
 kotlinx-serialization-json --> kotlinx-serialization-core
-core[<b>common-core</b><br>primitive extensions, Version, collection utils, Domain] --> kotlinx-serialization-core
-core -.-> kotlin-test
+common[<b>common</b><br>primitive extensions, Version, collection utils, Domain] --> kotlinx-serialization-core
+common -.-> kotlin-test
 datetime[<b>common-datetime</b><br>parsers] --> kotlinx-datetime
 serialization[<b>common-serialization</b><br>de- & serializers] --> kotlinx-serialization-json
-serialization --> core
+serialization --> common
 serialization --> datetime
-io[<b>common-io</b><br>Dir, File and FileLinesReader] --> core
+io[<b>common-io</b><br>Dir, File and FileLinesReader] --> common
 ```
 
 ## Commands

@@ -7,7 +7,7 @@ plugins {
     alias(libs.plugins.versions)
 }
 
-group = "fi.apinkivi"
+group = "fi.apinkivi.common"
 description = "Common domain independent code."
 
 kotlin {
